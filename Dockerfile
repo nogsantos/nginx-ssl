@@ -6,8 +6,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
-RUN openssl req -nodes -new -newkey rsa:4096 -out server.csr -sha256 \
--subj "/C=CL/ST=Nogsantos/L=Nogsantos/O=MyApp/OU=IT Department/CN=localhost"
+RUN openssl req -nodes -new -newkey rsa:4096 -out server.csr -sha256 -subj '/C=CL/ST=Nogsantos/L=Nogsantos/O=MyApp/OU=IT Department/CN=localhost'
 
 RUN mv privkey.pem /etc/ssl/private/server.key
 
