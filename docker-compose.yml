@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  victim:
+    image: nogsantos/nginx-ssl
+    ports:
+      - "80:80"
+      - "443:443"
